@@ -1,0 +1,33 @@
+HTTrack3.49-2 launched on Thu, 11 Sep 2025 00:55:46 at https://anotapedidosonline.com
+(httrack https://anotapedidosonline.com -O /Users/victorduarte/Desktop/site-copiado )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+00:56:22	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/css/all.min.css (from https://anotapedidosonline.com/)
+00:56:22	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/link.href, window.location.origin (from https://anotapedidosonline.com/)
+00:57:20	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/maniacombo.html/link.href, window.location.origin (from https://anotapedidosonline.com/produtos/maniacombo.html/index.html)
+00:57:23	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/familiamania.html/link.href, window.location.origin (from https://anotapedidosonline.com/produtos/familiamania.html/index.html)
+00:57:25	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/maniaindividual.html/link.href, window.location.origin (from https://anotapedidosonline.com/produtos/maniaindividual.html/index.html)
+00:57:27	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/classicmania.html/link.href, window.location.origin (from https://anotapedidosonline.com/produtos/classicmania.html/index.html)
+00:57:29	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/bruxa.html/link.href, window.location.origin (from https://anotapedidosonline.com/produtos/bruxa.html/index.html)
+00:57:31	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/coleoy.html/link.href, window.location.origin (from https://anotapedidosonline.com/produtos/coleoy.html/index.html)
+00:57:35	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/maniacombo.html/GET.html (from https://anotapedidosonline.com/produtos/maniacombo.html/js/deliveryProduto.js)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/familiamania.html/GET.html (from https://anotapedidosonline.com/produtos/familiamania.html/js/deliveryProduto.js)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/maniaindividual.html/GET.html (from https://anotapedidosonline.com/produtos/maniaindividual.html/js/deliveryProduto.js)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/classicmania.html/GET.html (from https://anotapedidosonline.com/produtos/classicmania.html/js/deliveryProduto.js)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/bruxa.html/GET.html (from https://anotapedidosonline.com/produtos/bruxa.html/js/deliveryProduto.js)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/coleoy.html/GET.html (from https://anotapedidosonline.com/produtos/coleoy.html/js/deliveryProduto.js)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/htdocs_error/style.css (from https://anotapedidosonline.com/GET.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/htdocs_error/something-lost.png (from https://anotapedidosonline.com/GET.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/images/logo.jpg (from https://anotapedidosonline.com/index-2.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/cdn.utmify.com.br/scripts/pixel/pixel.js (from https://anotapedidosonline.com/index-2.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/images/cover.png (from https://anotapedidosonline.com/index-2.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/images/individual.jpg (from https://anotapedidosonline.com/index-2.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/produtos/maniaduplo.html/index.html (from https://anotapedidosonline.com/index-2.html)
+00:57:45	Error: 	"Not Found" (404) at link https://anotapedidosonline.com/images/brutu.jpg (from https://anotapedidosonline.com/index-2.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 59 seconds : 119 links scanned, 96 files written (21642227 bytes overall) [13853164 bytes received at 116413 bytes/sec], 12435860 bytes transferred using HTTP compression in 82 files, ratio 35%, 17.0 requests per connection
+(22 errors, 0 warnings, 0 messages)

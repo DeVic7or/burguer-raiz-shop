@@ -138,29 +138,6 @@
       defer
     ></script>
     
-    <script>
-      (function () {
-        const params = new URLSearchParams(window.location.search);
-        const fbclid = params.get("fbclid");
-    
-        // Salva o fbclid ao entrar no site
-        if (fbclid) {
-          sessionStorage.setItem("fbclid", fbclid);
-        }
-    
-        // Aplica o fbclid em todos os links internos
-        const savedFbclid = sessionStorage.getItem("fbclid");
-        if (savedFbclid) {
-          const anchors = document.querySelectorAll('a[href^="/"], a[href*="' + window.location.hostname + '"]');
-    
-          anchors.forEach(link => {
-            const url = new URL(link.href%2c%20window.location.html);
-            url.searchParams.set("fbclid", savedFbclid);
-            link.href = url.toString();
-          });
-        }
-      })();
-    </script>
 </head>
     
     <body>
@@ -646,14 +623,88 @@
         <script type="text/javascript" src="js/jquery-mask.js" defer=""></script>
     
         <script src="js/sweetalert.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
         
-    
-    
-    
-    
-    
-    
+        <script>
+// Captura cookie
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : null;
+}
+
+// Gera event_id (UUID v4 simples)
+function generateEventId() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
+
+// Obter IP público
+async function getClientIp() {
+  try {
+    const res = await fetch("https://api.ipify.org?format=json");
+    const data = await res.json();
+    return data.ip;
+  } catch (err) {
+    return "";
+  }
+}
+
+// Função de tracking + redirecionamento
+async function trackAndRedirect(produto) {
+  const fbp = getCookie('_fbp') || "";
+  const fbc = getCookie('_fbc') || "";
+  const event_id = generateEventId();
+  const clientIp = await getClientIp();
+  const clientUserAgent = navigator.userAgent;
+
+  const payload = {
+    event_name: "InitiateCheckout",
+    event_time: Math.floor(Date.now() / 1000),
+    event_id,
+    event_source_url: window.location.href,
+    action_source: "website",
+    user_data: {
+      fbp,
+      fbc,
+      client_ip_address: clientIp,
+      client_user_agent: clientUserAgent
+    },
+    custom_data: {
+      value: produto.value,
+      currency: produto.currency,
+      content_ids: [produto.product_id],
+      content_name: produto.product_name
+    }
+  };
+
+  // Envia para Zapier (Zap 1 - Tracking)
+  await fetch("https://hooks.zapier.com/hooks/catch/24674531/u1av0r8/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  console.log("Tracking disparado:", payload);
+
+  // Redireciona para BSPay com event_id na URL
+  window.location.href = produto.checkout_url + "?event_id=" + event_id;
+}
+
+// Exemplo: botão de checkout do produto
+document.querySelectorAll(".btnCheckout").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const produto = {
+      product_id: btn.dataset.id,
+      product_name: btn.dataset.nome,
+      value: btn.dataset.valor,
+      currency: "BRL",
+      checkout_url: btn.dataset.checkout // link específico da BSPay
+    };
+    trackAndRedirect(produto);
+  });
+});
+</script>
 
 </body><!-- Mirrored from buguermaniasite.netlify.app/produtos/classicmania by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Mar 2025 01:43:07 GMT -->
 <!-- Mirrored from anotaaiburguermania.online/produtos/classicmania.html/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Apr 2025 18:58:36 GMT -->

@@ -172,39 +172,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1153384183366928&amp;ev=PageView&amp;noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    
-<!-- Script Utmify -->
-<script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-></script>
-    
-<script>
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    const fbclid = params.get("fbclid");
-
-    // Salva o fbclid ao entrar no site
-    if (fbclid) {
-      sessionStorage.setItem("fbclid", fbclid);
-    }
-
-    // Aplica o fbclid em todos os links internos
-    const savedFbclid = sessionStorage.getItem("fbclid");
-    if (savedFbclid) {
-      const anchors = document.querySelectorAll('a[href^="/"], a[href*="' + window.location.hostname + '"]');
-
-      anchors.forEach(link => {
-        const url = new URL(link.href%2c%20window.location.html);
-        url.searchParams.set("fbclid", savedFbclid);
-        link.href = url.toString();
-      });
-    }
-  })();
-</script>
 
 <style>
 .diaPromoEstilo {
@@ -264,7 +231,7 @@ src="https://www.facebook.com/tr?id=1153384183366928&amp;ev=PageView&amp;noscrip
                     <img src="images/verificado.png" alt="Verificado iFood" style="width: 20px; height: 20px;">
                   </h1>
 					<div class="icones">
-					<a href="https://www.instagram.com/burgaodacasaoficial/" title="Instagram" target="_blank">
+					<a href="#" title="Instagram" target="_blank">
 							<i class="fab fa-instagram"></i> 
 						</a>
 						<a class="informacoes" href="#info" title="Info">
